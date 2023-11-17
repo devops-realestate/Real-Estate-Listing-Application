@@ -1,9 +1,18 @@
-# Real-Estate-Listing-Application
-DevOps Project
+# Real-Estate-Listing-Application - PropertEase
 
-1. As a user I should be able to register, login and logout from the app
-2. User is able to add delete edit property listings.
-3.User can be able to see complete description about the property.
-4.Apply filters for searching properties.
-5. User will be able to wishlist liked property.
-6. User can buy property based on the preference.
+
+Introducing our innovative real estate application PropertEase, a comprehensive platform that seamlessly connects buyers, sellers, and renters in the dynamic world of real estate. With an intuitive and user-friendly interface, users can effortlessly browse through a diverse range of property listings, enabling them to buy and rent with ease. Also users can list properties to sell. Whether you're a prospective homeowner, a property investor, or a tenant in search of the perfect space, our real estate application is designed to simplify the entire process, providing a one-stop solution for all your real estate needs.
+
+
+# Features of our application 
+
+1. Users should be able to register and login into the application.
+2. Users can add, edit property listings.
+3. Users can see complete description about the properties.
+4. Apply filters for searching properties.
+5. Users will be able to add liked properties to wishlist.
+6. Users can buy/rent property based on his/her preference.
+
+
+
+GitHub link - https://github.com/devops-realestate/Real-Estate-Listing-Application
