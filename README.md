@@ -12,7 +12,3 @@ Introducing our innovative real estate application PropertEase, a comprehensive 
 4. Apply filters for searching properties.
 5. Users will be able to add liked properties to wishlist.
 6. Users can buy/rent property based on his/her preference.
-
-
-
-GitHub link - https://github.com/devops-realestate/Real-Estate-Listing-Application
