@@ -5,18 +5,17 @@
    <section class="flex">
 
       <div class="box">
-         <a href="tel:1234567890"><i class="fas fa-phone"></i><span>123456789</span></a>
-         <a href="tel:1112223333"><i class="fas fa-phone"></i><span>1112223333</span></a>
-         <a href="mailto:shaikhanas@gmail.com"><i class="fas fa-envelope"></i><span>shaikhanas@gmail.com</span></a>
-         <a href="#"><i class="fas fa-map-marker-alt"></i><span>mumbai, india - 400104</span></a>
+         <a href="tel:8217588659"><i class="fas fa-phone"></i><span>8217588659</span></a>
+         <a href="tel:9380352991"><i class="fas fa-phone"></i><span>9380352991</span></a>
+         <a href="mailto:guruprasad.hukkeri@sap.com"><i class="fas fa-envelope"></i><span>guruprasad.hukkeri@sap.com</span></a>
+         <a href="#"><i class="fas fa-map-marker-alt"></i><span>Bangalore, india - 560066</span></a>
       </div>
 
       <div class="box">
-         <a href="home.php"><span>home</span></a>
-         <a href="about.php"><span>about</span></a>
-         <a href="contact.php"><span>contact</span></a>
-         <a href="listings.php"><span>all listings</span></a>
-         <a href="saved.php"><span>saved properties</span></a>
+         <a href="home.php"><span>Home</span></a>
+         <a href="about.php"><span>About</span></a>
+         <a href="contact.php"><span>Contact</span></a>
+         <a href="listings.php"><span>All Listings</span></a>
       </div>
 
       <div class="box">
@@ -28,8 +27,6 @@
       </div>
 
    </section>
-
-   <div class="credit">&copy; copyright @ <?= date('Y'); ?> by <span>mr. web designer</span> | all rights reserved!</div>
 
 </footer>
 

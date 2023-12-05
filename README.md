@@ -1,14 +1,15 @@
-# Real-Estate-Listing-Application - PropertEase
+# Real-Estate-Listing-Application - PropertEase (DevOps project)
 
+Introducing PropertEase – an innovative real estate application that seamlessly connects buyers, sellers, and renters. With an intuitive interface, users can effortlessly explore diverse property listings, making buying, selling, and renting a breeze. 
 
-Introducing our innovative real estate application PropertEase, a comprehensive platform that seamlessly connects buyers, sellers, and renters in the dynamic world of real estate. With an intuitive and user-friendly interface, users can effortlessly browse through a diverse range of property listings, enabling them to buy and rent with ease. Also users can list properties to sell. Whether you're a prospective homeowner, a property investor, or a tenant in search of the perfect space, our real estate application is designed to simplify the entire process, providing a one-stop solution for all your real estate needs.
+This project is created by:
 
+Akash S
+Gururprasad Hukkeri
+Sindhu H R
+Akshata Kulkarni
+Rakshith L S
+Srusthi Torgal
 
-# Features of our application 
-
-1. Users should be able to register and login into the application.
-2. Users can add, edit property listings.
-3. Users can see complete description about the properties.
-4. Apply filters for searching properties.
-5. Users will be able to add liked properties to wishlist.
-6. Users can buy/rent property based on his/her preference.
+PropertEase simplifies the entire real estate process, providing a one-stop solution for all your property needs.
+has context menu

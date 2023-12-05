@@ -86,32 +86,26 @@ if(isset($_POST['send'])){
 
       <div class="box active">
          <h3><span>how to cancel booking?</span><i class="fas fa-angle-down"></i></h3>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus veritatis ducimus aut accusantium sunt error esse laborum cumque ipsum ab.</p>
       </div>
 
       <div class="box active">
          <h3><span>when will I get the possession?</span><i class="fas fa-angle-down"></i></h3>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus veritatis ducimus aut accusantium sunt error esse laborum cumque ipsum ab.</p>
       </div>
 
       <div class="box">
          <h3><span>where can I pay the rent?</span><i class="fas fa-angle-down"></i></h3>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus veritatis ducimus aut accusantium sunt error esse laborum cumque ipsum ab.</p>
-      </div>
+\      </div>
 
       <div class="box">
          <h3><span>how to contact with the buyers?</span><i class="fas fa-angle-down"></i></h3>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus veritatis ducimus aut accusantium sunt error esse laborum cumque ipsum ab.</p>
       </div>
 
       <div class="box">
          <h3><span>why my listing not showing up?</span><i class="fas fa-angle-down"></i></h3>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus veritatis ducimus aut accusantium sunt error esse laborum cumque ipsum ab.</p>
       </div>
 
       <div class="box">
          <h3><span>how to promote my listing?</span><i class="fas fa-angle-down"></i></h3>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus veritatis ducimus aut accusantium sunt error esse laborum cumque ipsum ab.</p>
       </div>
 
    </div>

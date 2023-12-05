@@ -59,19 +59,16 @@ if(isset($_COOKIE['user_id'])){
       <div class="box">
          <img src="images/step-1.png" alt="">
          <h3>search property</h3>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, placeat.</p>
       </div>
 
       <div class="box">
          <img src="images/step-2.png" alt="">
          <h3>contact agents</h3>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, placeat.</p>
       </div>
 
       <div class="box">
          <img src="images/step-3.png" alt="">
          <h3>enjoy property</h3>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, placeat.</p>
       </div>
 
    </div>
@@ -92,7 +89,7 @@ if(isset($_COOKIE['user_id'])){
          <div class="user">
             <img src="images/pic-1.png" alt="">
             <div>
-               <h3>john deo</h3>
+               <h3>Sam</h3>
                <div class="stars">
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
@@ -102,14 +99,14 @@ if(isset($_COOKIE['user_id'])){
                </div>
             </div>
          </div>
-         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci voluptates delectus distinctio quam sequi error eum suscipit tempore inventore ex!</p>
+         <p>Good webiste</p>
       </div>
 
       <div class="box">
          <div class="user">
             <img src="images/pic-2.png" alt="">
             <div>
-               <h3>john deo</h3>
+               <h3>Akshata</h3>
                <div class="stars">
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
@@ -119,14 +116,14 @@ if(isset($_COOKIE['user_id'])){
                </div>
             </div>
          </div>
-         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci voluptates delectus distinctio quam sequi error eum suscipit tempore inventore ex!</p>
+         <p>Nice!</p>
       </div>
 
       <div class="box">
          <div class="user">
             <img src="images/pic-3.png" alt="">
             <div>
-               <h3>john deo</h3>
+               <h3>Varun</h3>
                <div class="stars">
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
@@ -136,14 +133,14 @@ if(isset($_COOKIE['user_id'])){
                </div>
             </div>
          </div>
-         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci voluptates delectus distinctio quam sequi error eum suscipit tempore inventore ex!</p>
+         <p>Good service!</p>
       </div>
 
       <div class="box">
          <div class="user">
             <img src="images/pic-4.png" alt="">
             <div>
-               <h3>john deo</h3>
+               <h3>Sindhu</h3>
                <div class="stars">
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
@@ -153,14 +150,14 @@ if(isset($_COOKIE['user_id'])){
                </div>
             </div>
          </div>
-         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci voluptates delectus distinctio quam sequi error eum suscipit tempore inventore ex!</p>
+         <p>Trust the process!!</p>
       </div>
 
       <div class="box">
          <div class="user">
             <img src="images/pic-5.png" alt="">
             <div>
-               <h3>john deo</h3>
+               <h3>Akash</h3>
                <div class="stars">
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
@@ -170,14 +167,14 @@ if(isset($_COOKIE['user_id'])){
                </div>
             </div>
          </div>
-         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci voluptates delectus distinctio quam sequi error eum suscipit tempore inventore ex!</p>
+<p>Wow it's good</p>
       </div>
 
       <div class="box">
          <div class="user">
             <img src="images/pic-6.png" alt="">
             <div>
-               <h3>john deo</h3>
+               <h3>Pulkita</h3>
                <div class="stars">
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
@@ -187,7 +184,7 @@ if(isset($_COOKIE['user_id'])){
                </div>
             </div>
          </div>
-         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci voluptates delectus distinctio quam sequi error eum suscipit tempore inventore ex!</p>
+<p>Found what I was looking for!</P>
       </div>
 
    </div>
