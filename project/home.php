@@ -181,7 +181,6 @@ include 'components/save_send.php';
       <div class="box">
          <img src="images/icon-6.png" alt="">
          <h3>24/7 service</h3>
-         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, incidunt.</p>
       </div>
 
    </div>
