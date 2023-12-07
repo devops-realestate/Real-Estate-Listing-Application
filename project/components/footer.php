@@ -5,9 +5,9 @@
    <section class="flex">
 
       <div class="box">
-         <a href="tel:8217588659"><i class="fas fa-phone"></i><span>8217588659</span></a>
+         <a href="tel:8217588420"><i class="fas fa-phone"></i><span>8217588659</span></a>
          <a href="tel:9380352991"><i class="fas fa-phone"></i><span>9380352991</span></a>
-         <a href="mailto:guruprasad.hukkeri@sap.com"><i class="fas fa-envelope"></i><span>guruprasad.hukkeri@sap.com</span></a>
+         <a href="mailto:propertyEase@gmail.com"><i class="fas fa-envelope"></i><span>guruprasad.hukkeri@sap.com</span></a>
          <a href="#"><i class="fas fa-map-marker-alt"></i><span>Bangalore, india - 560066</span></a>
       </div>
 
