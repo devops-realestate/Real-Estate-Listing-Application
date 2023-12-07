@@ -33,14 +33,14 @@ pipeline {
         stage('Build Project') {
             steps {
                 script {
-                    echo 'Build Project'
+                    echo 'Build Project...'
                 }
             }
         }
-        stage('Security check') {
+        stage('Deploy') {
             steps {
                 script {
-                    echo 'Security check'
+                    echo 'Deploy...'
                 }
             }
         }
