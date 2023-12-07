@@ -1,31 +1,55 @@
 pipeline {
     agent any
-    
+ 
     stages {
-        stage('Check Directory') {
+        stage('Checkout') {
             steps {
-                script {
-                    // List files in the directory for verification
-                    bat 'dir C:\\Users\\I527868\\Downloads\\docker-compose'
-                }
+                git branch: 'main', url: 'https://github.com/devops-realestate/Real-Estate-Listing-Application.git'
             }
         }
-
-        stage('Build') {
+ 
+        stage('Clean project') {
             steps {
-                script {
-                    // Path to the Docker Compose executable on the Windows machine
-                    def dockerComposePath = 'C:\\Users\\I527868\\Downloads\\docker-compose\\docker-compose-windows-x86_64.exe'
-                    
-                    // Check if the file exists
-                    if (fileExists(dockerComposePath)) {
-                        // Run Docker Compose build
-                        bat "\"${dockerComposePath}\" build"
-                    } else {
-                        error "Docker Compose not found at specified path."
+                dir('backend') {
+                    script {
+                        echo "Cleaning Project..."
+                        sh 'mvn clean'
                     }
                 }
             }
+        }
+ 
+        stage('Compile code') {
+            steps {
+                dir('backend') {
+                    script {
+                        echo "Compile project..."
+                        sh 'mvn compile'
+                    }
+                }
+            }
+        }
+ 
+        stage('Build') {
+            steps {
+                dir('backend') {
+                    script {
+                        echo "Building..."
+                        sh 'mvn clean install'
+                    }
+                }
+            }
+        }
+    }
+ 
+    post {
+        success {
+            echo 'Pipeline successful!'
+            // Add any post-success actions or notifications here
+        }
+        failure {
+            echo 'Pipeline failed!'
+            // Add any post-failure actions or notifications here
         }
     }
 }
