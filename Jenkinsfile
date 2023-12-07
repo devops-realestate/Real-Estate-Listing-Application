@@ -9,7 +9,7 @@ pipeline {
                     sh 'curl -L "https://github.com/docker/compose/releases/download/latest/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose'
                     
                     // Give execute permissions to the downloaded binary
-                    sh 'chmod +x C:\Users\I527868\Downloads\docker-compose'
+                    sh 'chmod +x C:/Users/I527868/Downloads/docker-compose'
                 }
             }
         }
