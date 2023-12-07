@@ -14,7 +14,7 @@ pipeline {
                 // Run Docker Compose build
                 script {
                     // Assuming docker-compose.yml is in the root directory of the repository
-                    echo "hello world"
+                     sh 'docker-compose build'
                 }
             }
         }
