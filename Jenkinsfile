@@ -1,59 +1,57 @@
 pipeline {
     agent any
-
-    environment {
-      PATH = "C:/Program Files/Apache Maven/apache-maven-3.8.2-bin/apache-maven-3.8.2/bin"
-    }
- 
+    
     stages {
-        stage('Checkout') {
+        stage('Initializing Project') {
             steps {
-                git branch: 'main', url: 'https://github.com/devops-realestate/Real-Estate-Listing-Application.git'
-            }
-        }
- 
-        stage('Clean project') {
-            steps {
-                dir('backend') {
-                    script {
-                        echo "Cleaning Project..."
-                        sh 'mvn clean'
-                    }
+                script {
+                    echo 'Initializing...'
                 }
             }
         }
- 
-        stage('Compile code') {
+        stage('Cleaning Project') {
             steps {
-                dir('backend') {
-                    script {
-                        echo "Compile project..."
-                        sh 'mvn compile'
-                    }
+                script {
+                    echo 'Cleaning...'
                 }
             }
         }
- 
-        stage('Build') {
+        stage('Compile Project') {
             steps {
-                dir('backend') {
-                    script {
-                        echo "Building..."
-                        sh 'mvn clean install'
-                    }
+                script {
+                    echo 'Compiling...'
+                }
+            }
+        }
+        stage('Tests') {
+            steps {
+                script {
+                    echo 'Tests...'
+                }
+            }
+        }
+        stage('Build Project') {
+            steps {
+                script {
+                    echo 'Build Project'
+                }
+            }
+        }
+        stage('Security check') {
+            steps {
+                script {
+                    echo 'Security check'
                 }
             }
         }
     }
- 
+    
     post {
         success {
-            echo 'Pipeline successful!'
-            // Add any post-success actions or notifications here
+            echo 'Pipeline succeeded!'
         }
         failure {
             echo 'Pipeline failed!'
-            // Add any post-failure actions or notifications here
         }
     }
 }
