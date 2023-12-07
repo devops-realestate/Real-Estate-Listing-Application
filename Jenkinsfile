@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     // Download Docker Compose binary
-                    sh 'curl -L "https://github.com/docker/compose/releases/download/latest/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose'
+                    sh 'curl -L "https://github.com/docker/compose/releases/download/latest/docker-compose-$(uname -s)-$(uname -m)" -o C:/Users/I527868/Downloads/docker-compose'
                     
                     // Give execute permissions to the downloaded binary
                     sh 'chmod +x C:/Users/I527868/Downloads/docker-compose'
