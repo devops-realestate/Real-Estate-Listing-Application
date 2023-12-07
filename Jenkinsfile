@@ -2,19 +2,19 @@ pipeline {
     agent any
     
     stages {
-        stage('Checkout') {
+        stage('Install Docker Compose') {
             steps {
-                // Checkout code from the GitHub repository
-                git branch: 'main', url: 'https://github.com/devops-realestate/Real-Estate-Listing-Application'
+                script {
+                    // Install Docker Compose inside the Jenkins Docker container
+                    sh 'apk update && apk add docker-compose'  // Adjust for the package manager used in your Jenkins container
+                }
             }
         }
         
         stage('Build') {
             steps {
-                // Run Docker Compose build
                 script {
-                    // Assuming docker-compose.yml is in the root directory of the repository
-                     sh 'docker-compose build'
+                    sh 'docker-compose build'
                 }
             }
         }
