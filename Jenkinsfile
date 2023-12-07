@@ -1,5 +1,9 @@
 pipeline {
     agent any
+
+    environment {
+      PATH = "C:/Program Files/Apache Maven/apache-maven-3.8.2-bin/apache-maven-3.8.2/bin"
+    }
  
     stages {
         stage('Checkout') {
