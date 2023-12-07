@@ -1,55 +1,41 @@
 pipeline {
     agent any
- 
+
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/devops-realestate/Real-Estate-Listing-Application.git'
+                // Checkout the source code from the GitHub repository
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://YOUR_GITHUB_TOKEN@github.com/devops-realestate/Real-Estate-Listing-Application.git']]])
             }
         }
- 
-        stage('Clean project') {
+
+        stage('Build Docker Image') {
             steps {
-                dir('backend') {
-                    script {
-                        echo "Cleaning Project..."
-                        sh 'mvn clean'
+                // Build the Docker image using the Dockerfile
+                script {
+                    docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
+                        def customImage = docker.build("your-dockerhub-username/your-image-name:latest")
                     }
                 }
             }
         }
- 
-        stage('Compile code') {
+
+        stage('Deploy with Docker Compose') {
             steps {
-                dir('backend') {
-                    script {
-                        echo "Compile project..."
-                        sh 'mvn compile'
-                    }
-                }
-            }
-        }
- 
-        stage('Build') {
-            steps {
-                dir('backend') {
-                    script {
-                        echo "Building..."
-                        sh 'mvn clean install'
-                    }
+                // Deploy using Docker Compose
+                script {
+                    sh 'docker-compose up -d'
                 }
             }
         }
     }
- 
+
     post {
-        success {
-            echo 'Pipeline successful!'
-            // Add any post-success actions or notifications here
-        }
-        failure {
-            echo 'Pipeline failed!'
-            // Add any post-failure actions or notifications here
+        always {
+            // Clean up (optional)
+            script {
+                sh 'docker-compose down'
+            }
         }
     }
 }
