@@ -67,7 +67,7 @@ pipeline {
         always {
             script {
                 // Clean up (optional)
-                // sh 'rm -f docker.tgz'
+                sh 'rm -f docker.tgz'
             }
         }
     }
