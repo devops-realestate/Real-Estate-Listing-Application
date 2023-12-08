@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            // Use an image that has the Docker client installed
+            image 'docker:latest'
+        }
+    }
 
     stages {
         stage('Checkout') {
