@@ -2,44 +2,10 @@ pipeline {
     agent any
 
     stages {
-        stage('Download and Install Docker Compose') {
+        stage('Checkout') {
             steps {
                 script {
-                    // Download Docker Compose
-                    sh 'curl -L https://github.com/docker/compose/releases/download/v2.23.3/docker-compose-linux-x86_64 -o docker-compose'
-                    
-                    // Make it executable
-                    sh 'chmod +x docker-compose'
-                    
-                    // Move it to a directory in the PATH
-                    sh 'mv docker-compose /var/jenkins_home/'
-                    
-                    // Verify installation
-                    sh 'docker-compose --version'
-                }
-            }
-        }
-
-        stage('Download and Install Docker Engine') {
-            steps {
-                script {
-                    // Download Docker Engine
-                    sh 'curl -L https://download.docker.com/linux/static/stable/x86_64/docker-17.03.0-ce.tgz -o docker.tgz'
-                    
-                    // Extract the archive
-                    sh 'tar -xzvf docker.tgz'
-                    
-                    // Move Docker binary to a directory in the PATH
-                    sh 'mv docker/* /var/jenkins_home/'
-                    
-                    // Verify installation
-                    sh 'docker --version'
-                    
-                    // Start the Docker daemon
-                    args 'sudo dockerd &'
-                    
-                    // Verify Docker daemon is running
-                    sh 'docker info'
+                    checkout scm
                 }
             }
         }
@@ -47,17 +13,21 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    // Clone the repository
-                    sh 'git clone https://github.com/devops-realestate/Real-Estate-Listing-Application'
-                    
-                    // Navigate to the repository directory
-                    dir('Real-Estate-Listing-Application') {
-                        // Build Docker image using docker-compose
-                        sh 'docker-compose build'
-                        
-                        // Tag the Docker image
-                        // sh 'docker tag your-image-name:latest your-docker-registry/your-image-name:latest'
-                    }
+                    // Build Docker image using Dockerfile
+                    def imageName = "my-real-estate-app:latest"
+                    sh "docker build -t ${imageName} ."
+                }
+            }
+        }
+
+        stage('Push Docker Image') {
+            steps {
+                script {
+                    // Push Docker image to a registry (replace 'your-registry' with your actual registry)
+                    def registryUrl = "your-registry.com"
+                    def imageName = "my-real-estate-app:latest"
+                    sh "docker tag ${imageName} ${registryUrl}/${imageName}"
+                    sh "docker push ${registryUrl}/${imageName}"
                 }
             }
         }
@@ -65,9 +35,10 @@ pipeline {
 
     post {
         always {
+            // Cleanup: Remove local Docker image after build and push
             script {
-                // Clean up (optional)
-                sh 'rm -f docker.tgz'
+                def imageName = "my-real-estate-app:latest"
+                sh "docker rmi ${imageName}"
             }
         }
     }
