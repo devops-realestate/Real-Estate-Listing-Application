@@ -12,7 +12,7 @@ pipeline {
                     sh 'chmod +x docker-compose'
                     
                     // Move it to a directory in the PATH
-                    // args 'sudo mv docker-compose /usr/local/bin/'
+                    sh 'mv docker-compose /var/jenkins_home/'
                     
                     // Verify installation
                     sh 'docker-compose --version'
@@ -30,13 +30,13 @@ pipeline {
                     sh 'tar -xzvf docker.tgz'
                     
                     // Move Docker binary to a directory in the PATH
-                    // args 'sudo mv docker/* /usr/local/bin/'
+                    sh 'mv docker/* /var/jenkins_home/'
                     
                     // Verify installation
                     sh 'docker --version'
                     
                     // Start the Docker daemon
-                    // args 'sudo dockerd &'
+                    args 'sudo dockerd &'
                     
                     // Verify Docker daemon is running
                     sh 'docker info'
