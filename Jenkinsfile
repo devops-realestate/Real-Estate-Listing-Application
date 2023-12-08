@@ -1,16 +1,12 @@
 pipeline {
-    agent {
-        docker {
-            // Use the Docker image with Docker installed
-            image 'docker:latest'
-        }
-    }
+    agent any
 
     stages {
-        stage('Checkout') {
+        stage('Download Docker Image') {
             steps {
                 script {
-                    checkout scm
+                    // Download a Docker image with Docker CLI
+                    sh 'docker pull docker:latest'
                 }
             }
         }
@@ -18,32 +14,15 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    // Build Docker image using Dockerfile
-                    def imageName = "my-real-estate-app:latest"
-                    sh "docker build -t ${imageName} ."
-                }
-            }
-        }
+                    // Clone the repository
+                    sh 'git clone https://github.com/devops-realestate/Real-Estate-Listing-Application'
 
-        stage('Push Docker Image') {
-            steps {
-                script {
-                    // Push Docker image to a registry (replace 'your-registry' with your actual registry)
-                    def registryUrl = "your-registry.com"
-                    def imageName = "my-real-estate-app:latest"
-                    sh "docker tag ${imageName} ${registryUrl}/${imageName}"
-                    sh "docker push ${registryUrl}/${imageName}"
-                }
-            }
-        }
-    }
+                    // Move into the repository directory
+                    sh 'cd Real-Estate-Listing-Application'
 
-    post {
-        always {
-            // Cleanup: Remove local Docker image after build and push
-            script {
-                def imageName = "my-real-estate-app:latest"
-                sh "docker rmi ${imageName}"
+                    // Build the Docker image using Dockerfile and docker-compose.yml
+                    sh 'docker build -t my-real-estate-app:latest .'
+                }
             }
         }
     }
