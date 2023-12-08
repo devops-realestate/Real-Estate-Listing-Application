@@ -30,7 +30,7 @@ pipeline {
                     sh 'tar -xzvf docker.tgz'
                     
                     // Move Docker binary to a directory in the PATH
-                    sh 'sudo mv docker/* /usr/local/bin/'
+                    args 'sudo mv docker/* /usr/local/bin/'
                     
                     // Verify installation
                     sh 'docker --version'
