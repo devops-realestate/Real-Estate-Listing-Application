@@ -85,7 +85,7 @@ if(isset($_POST['submit'])){
       <input type="password" name="pass" required maxlength="20" placeholder="enter your password" class="box">
       <input type="password" name="c_pass" required maxlength="20" placeholder="confirm your password" class="box">
       <p>already have an account? <a href="login.php">login now</a></p>
-      <input type="submit" id="regsub" value="login now" name="submit" class="btn"> <a href="login.php" class="btn">Login</a>
+      <input type="submit" id="regbtn" value="register now" name="submit" class="btn">
    </form>
 
 </section>
