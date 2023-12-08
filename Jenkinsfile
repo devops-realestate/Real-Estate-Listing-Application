@@ -12,7 +12,7 @@ pipeline {
                     sh 'chmod +x docker-compose'
                     
                     // Move it to a directory in the PATH
-                    sh 'mv docker-compose /usr/local/bin/'
+                    args 'sudo mv docker-compose /usr/local/bin/'
                     
                     // Verify installation
                     sh 'docker-compose --version'
@@ -30,13 +30,13 @@ pipeline {
                     sh 'tar -xzvf docker.tgz'
                     
                     // Move Docker binary to a directory in the PATH
-                    sh 'mv docker/* /usr/local/bin/'
+                    sh 'sudo mv docker/* /usr/local/bin/'
                     
                     // Verify installation
                     sh 'docker --version'
                     
                     // Start the Docker daemon
-                    sh 'dockerd &'
+                    args 'sudo dockerd &'
                     
                     // Verify Docker daemon is running
                     sh 'docker info'
@@ -56,7 +56,7 @@ pipeline {
                         sh 'docker-compose build'
                         
                         // Tag the Docker image
-                        sh 'docker tag your-image-name:latest your-docker-registry/your-image-name:latest'
+                        // sh 'docker tag your-image-name:latest your-docker-registry/your-image-name:latest'
                     }
                 }
             }
@@ -67,7 +67,7 @@ pipeline {
         always {
             script {
                 // Clean up (optional)
-                sh 'rm -f docker.tgz'
+                // sh 'rm -f docker.tgz'
             }
         }
     }
