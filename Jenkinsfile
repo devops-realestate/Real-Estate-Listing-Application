@@ -1,57 +1,46 @@
 pipeline {
     agent any
     
-    stages {
-        stage('Initializing Project') {
-            steps {
-                script {
-                    echo 'Initializing...'
-                }
-            }
-        }
-        stage('Cleaning Project') {
-            steps {
-                script {
-                    echo 'Cleaning...'
-                }
-            }
-        }
-        stage('Compile Project') {
-            steps {
-                script {
-                    echo 'Compiling...'
-                }
-            }
-        }
-        stage('Tests') {
-            steps {
-                script {
-                    echo 'Tests...'
-                }
-            }
-        }
-        stage('Build Project') {
-            steps {
-                script {
-                    echo 'Build Project...'
-                }
-            }
-        }
-        stage('Deploy') {
-            steps {
-                script {
-                    echo 'Deploy...'
-                }
-            }
-        }
+    tools {
+        maven 'M3'
+        jdk 'jdk-17.0.9'
     }
     
-    post {
-        success {
-            echo 'Pipeline succeeded!'
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/devops-realestate/Real-Estate-Listing-Application.git'
+            }
         }
-        failure {
-            echo 'Pipeline failed!'
+        
+        stage('Initialize') {
+            steps {
+                bat '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                '''
+            }
+        }
+
+        stage('Build') {
+            steps { 
+                    bat 'mvn install'
+                }
+            
+        }
+        
+        stage('Package') {
+            steps {
+               {
+                    bat 'mvn package'
+                }
+            }
+        }
+        
+        stage('Deploy') {
+            steps {
+                echo 'Deploying..'
+            }
         }
     }
 }
