@@ -9,6 +9,14 @@ pipeline {
                 }
             }
         }
+        stage('Building Project') {
+            steps {
+                script {
+                    echo 'Build...'
+                }
+            }
+        }
+        
         stage('Cleaning Docker') {
             steps {
                 script {
@@ -16,31 +24,18 @@ pipeline {
                 }
             }
         }
-        stage('Creating container') {
-            steps {
-                script {
-                    echo 'Container...'
-                }
-            }
-        }
         stage('Creating Images') {
             steps {
                 script {
-                    echo 'Images...'
+                    echo 'Docker build...'
                 }
             }
         }
-        stage('Listing Images') {
+        
+        stage('Docker Run') {
             steps {
                 script {
-                    echo 'Images...'
-                }
-            }
-        }
-        stage('Docker build Image') {
-            steps {
-                script {
-                    echo 'Docker up...'
+                    echo 'Docker compose up...'
                 }
             }
         }
