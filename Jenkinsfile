@@ -1,45 +1,57 @@
 pipeline {
     agent any
     
-    tools {
-        maven 'M3'
-        jdk 'jdk-17.0.9'
-    }
-    
     stages {
-        stage('Checkout') {
+        stage('Initializing Project') {
             steps {
-                git branch: 'main', url: 'https://github.com/devops-realestate/Real-Estate-Listing-Application.git'
+                script {
+                    echo 'Initializing...'
+                }
             }
         }
-        
-        stage('Initialize') {
+        stage('Cleaning Project') {
             steps {
-                bat '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-                '''
+                script {
+                    echo 'Cleaning...'
+                }
             }
         }
-
-        stage('Build') {
-            steps { 
-                    bat 'mvn install'
+        stage('Compile Project') {
+            steps {
+                script {
+                    echo 'Compiling...'
                 }
-            
+            }
         }
-        
-        stage('Package') {
-            steps 
-               {
-                    bat 'mvn package'
+        stage('Tests') {
+            steps {
+                script {
+                    echo 'Tests...'
                 }
+            }
         }
-        
+        stage('Build Project') {
+            steps {
+                script {
+                    echo 'Build Project...'
+                }
+            }
+        }
         stage('Deploy') {
             steps {
-                echo 'Deploying..'
+                script {
+                    echo 'Deploy...'
+                }
             }
+        }
+    }
+    
+    post {
+        success {
+            echo 'Pipeline succeeded!'
+        }
+        failure {
+            echo 'Pipeline failed!'
         }
     }
 }
