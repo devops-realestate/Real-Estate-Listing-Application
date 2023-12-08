@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            // Use an image that has the Docker client installed
+            // Use the Docker image with Docker installed
             image 'docker:latest'
         }
     }
