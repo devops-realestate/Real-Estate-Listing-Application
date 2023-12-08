@@ -9,41 +9,38 @@ pipeline {
                 }
             }
         }
-        stage('Cleaning Project') {
+        stage('Cleaning Docker') {
             steps {
                 script {
-                    echo 'Cleaning...'
+                    echo 'Cleaning Docker...'
                 }
             }
         }
-        stage('Compile Project') {
+        stage('Creating container') {
             steps {
                 script {
-                    echo 'Compiling...'
+                    echo 'Container...'
                 }
             }
         }
-        stage('Tests') {
+        stage('Creating Images') {
             steps {
-                    echo 'Tests...'
-                stage('UI Automation') {
-                    steps {
-                            echo 'UI Automation...'
-                    }
+                script {
+                    echo 'Images...'
                 }
             }
         }
-        stage('Build Project') {
+        stage('Listing Images') {
             steps {
                 script {
-                    echo 'Build Project...'
+                    echo 'Images...'
                 }
             }
         }
-        stage('Deploy') {
+        stage('Docker build Image') {
             steps {
                 script {
-                    echo 'Deploy...'
+                    echo 'Docker up...'
                 }
             }
         }
