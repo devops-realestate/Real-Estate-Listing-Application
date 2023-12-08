@@ -56,7 +56,7 @@ pipeline {
                         sh 'docker-compose build'
                         
                         // Tag the Docker image
-                        // sh 'docker_tag:latest your-docker-registry/your-image-name:latest'
+                        sh 'docker tag your-image-name:latest your-docker-registry/your-image-name:latest'
                     }
                 }
             }
@@ -67,7 +67,7 @@ pipeline {
         always {
             script {
                 // Clean up (optional)
-                // sh 'rm -f docker.tgz'
+                sh 'rm -f docker.tgz'
             }
         }
     }
