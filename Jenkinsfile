@@ -28,6 +28,13 @@ pipeline {
                 script {
                     echo 'Tests...'
                 }
+                stage('UI Automation') {
+                    steps {
+                        script {
+                            echo 'UI Automation...'
+                        }
+                    }
+                }
             }
         }
         stage('Build Project') {
